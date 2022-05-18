@@ -84,6 +84,18 @@ kafka-topics.sh --new-consumer --bootstrap-server localhost:9092/kafka --list
 
 kafka-topics.sh --new-consumer --bootstrap-server localhost:9092/kafka --describe --group 群组名
 
+##启动一个生产者
+
+kafka-console-producer.bat --broker-list localhost:9092 --topic kafka-spring-topic
+
+##启动一个消费者
+
+kafka-console-consumer.bat --zookeeper localhost:2181/kafka-one --from-beginning --topic kafka-spring-topic 
+
+##查看某主题的某消费者群组消费偏移量
+
+kafka-consumer-offset-checker.bat --zookeeper localhost:2181/kafka-one --topic kafka-spring-topic-b --group spring-kafka-group-ack
+
 Broker配置
 
 配置文件放在Kafka目录下的config目录中，主要是server.properties文件
