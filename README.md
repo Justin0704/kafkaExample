@@ -90,7 +90,9 @@ kafka-console-producer.bat --broker-list localhost:9092 --topic kafka-spring-top
 
 ##启动一个消费者
 
-kafka-console-consumer.bat --zookeeper localhost:2181/kafka-one --from-beginning --topic kafka-spring-topic 
+#kafka-console-consumer.bat --zookeeper localhost:2181/kafka-one --from-beginning --topic kafka-spring-topic 
+
+kafka-console-consumer.bat --bootstrap-server  localhost:9092 --from-beginning --topic justin
 
 ##查看某主题的某消费者群组消费偏移量
 
