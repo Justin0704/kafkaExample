@@ -20,7 +20,7 @@ public class HelloKafkaProducer {
             for(int i = 0;i < 4;i++){
                 //key之用于分区，相同的key则不会分区（负载均衡）
                 record = new ProducerRecord<String, String>(KafaConstant.HELLO_TOPIC, String.valueOf(i), "justin");
-                producer.send(record);
+                producer.send(record);//发送并忘记，（会有重试但有时候会丢失消息）
                 System.out.println(i + " ,message is sent");
             }
         }finally {

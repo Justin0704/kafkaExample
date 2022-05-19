@@ -19,6 +19,7 @@ public class KafkaFutureProducer {
         //TODO 消息生产者
         producer = new KafkaProducer<String, String>(KafaConstant.producerConfig(StringSerializer.class, StringSerializer.class));
         try {
+            /*待发送的消息实例*/
             ProducerRecord<String, String> record;
             try{
                 record = new ProducerRecord<String, String>(KafaConstant.HELLO_TOPIC, "teacher10", "willon");
