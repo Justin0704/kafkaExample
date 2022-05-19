@@ -18,7 +18,8 @@ public class HelloKafkaProducer {
             ProducerRecord<String, String> record;
             //发送消息
             for(int i = 0;i < 4;i++){
-                record = new ProducerRecord<>(KafaConstant.HELLO_TOPIC, String.valueOf(i), "justin");
+                //key之用于分区，相同的key则不会分区（负载均衡）
+                record = new ProducerRecord<String, String>(KafaConstant.HELLO_TOPIC, String.valueOf(i), "justin");
                 producer.send(record);
                 System.out.println(i + " ,message is sent");
             }
