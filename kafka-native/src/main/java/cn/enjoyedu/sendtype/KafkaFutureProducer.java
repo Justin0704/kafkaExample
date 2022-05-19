@@ -24,7 +24,7 @@ public class KafkaFutureProducer {
             try{
                 record = new ProducerRecord<String, String>(KafaConstant.HELLO_TOPIC, "teacher10", "willon");
                 Future<RecordMetadata> future = producer.send(record);
-                RecordMetadata metadata = future.get();
+                RecordMetadata metadata = future.get();//发送数据会阻塞在这个地方
                 if(metadata != null){
                     System.out.println("offset: " + metadata.offset() + " - " + "partition: " + metadata.partition());
                 }

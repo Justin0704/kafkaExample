@@ -25,6 +25,9 @@ public class KafkaAsynProducer {
                 producer.send(record, new Callback() {
                     @Override
                     public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+                        if(e != null){
+                            e.printStackTrace();
+                        }
                         if(recordMetadata != null){
                             System.out.println("offset: " + recordMetadata.offset() + " - " + "partition: " + recordMetadata.partition());
                         }
