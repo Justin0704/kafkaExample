@@ -15,9 +15,7 @@ public class SelfPartitionProducer {
 
     public static void main(String[] args) {
         /*消息生产者*/
-        Properties properties
-                = KafaConstant.producerConfig(StringSerializer.class,
-                StringSerializer.class);
+        Properties properties = KafaConstant.producerConfig(StringSerializer.class, StringSerializer.class);
         //TODO
         /*使用自定义的分区器*/
         properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "cn.enjoyedu.selfpartition.SelfPartitioner");
@@ -26,9 +24,7 @@ public class SelfPartitionProducer {
             /*待发送的消息实例*/
             ProducerRecord<String,String> record;
             try {
-                record = new ProducerRecord<String,String>(
-                        KafaConstant.SELF_PARTITION_TOPIC,"teacher01",
-                        "mark");
+                record = new ProducerRecord<String,String>( KafaConstant.SELF_PARTITION_TOPIC,"teacher01", "justin01");
                 Future<RecordMetadata> future = producer.send(record);
                 System.out.println("Do other something");
                 RecordMetadata recordMetadata = future.get();

@@ -14,17 +14,13 @@ public class SysPartitionProducer {
 
     public static void main(String[] args) {
         /*消息生产者*/
-        Properties properties
-                = KafaConstant.producerConfig(StringSerializer.class,
-                StringSerializer.class);
+        Properties properties = KafaConstant.producerConfig(StringSerializer.class, StringSerializer.class);
         producer = new KafkaProducer<String, String>(properties);
         try {
             /*待发送的消息实例*/
             ProducerRecord<String,String> record;
             try {
-                record = new ProducerRecord<String,String>(
-                        KafaConstant.SELF_PARTITION_TOPIC,"teacher01",
-                        "justin");
+                record = new ProducerRecord<String,String>(KafaConstant.SELF_PARTITION_TOPIC,"teacher01", "justin");
                 Future<RecordMetadata> future = producer.send(record);
                 System.out.println("Do other something");
                 RecordMetadata recordMetadata = future.get();
