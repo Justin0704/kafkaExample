@@ -6,6 +6,9 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
 
+/**
+ * 生产者的属性配置
+ */
 public class ConfigKafkaProducer {
     public static void main(String[] args) {
 
