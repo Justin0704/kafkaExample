@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Properties;
 
 /**
- * 异步和同步结合
+ * 异步和同步结合（提交偏移量）
  */
 public class CommitSyncAndAsync {
     public static void main(String[] args) {

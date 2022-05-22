@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Properties;
 
 /**
- * 消费者使用同步提交模式
+ * 消费者使用同步提交模式（提交偏移量）
  */
 public class CommitSync {
 

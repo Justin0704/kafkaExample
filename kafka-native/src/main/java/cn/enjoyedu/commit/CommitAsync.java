@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * 异步手动提交
+ * 异步手动提交（提交偏移量）
  */
 public class CommitAsync {
     public static void main(String[] args) {
