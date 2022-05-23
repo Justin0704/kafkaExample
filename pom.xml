@@ -10,6 +10,7 @@
     <modules>
         <module>kafka-native</module>
         <module>kafka-spring</module>
+        <module>kafka-springboot</module>
     </modules>
 
     <packaging>pom</packaging>
